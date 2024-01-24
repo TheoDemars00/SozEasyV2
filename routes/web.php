@@ -19,8 +19,20 @@ Route::get('/', function () {
 
 Route::get('/login', function () {
     return view('login');
-});
+})->name('login');
 
 Route::get('/homepage', function () {
     return view('homepage');
 });
+
+Route::get('/categories', function () {
+    return view('categories');
+})->name('categories');
+
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
+
+Route::get('/panier', function () {
+    return view('panier');
+})->name('panier');
