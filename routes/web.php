@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\SeeCategorieController;
+use App\Http\Controllers\UserController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
 
 Route::get('/login', function () {
     return view('login');
@@ -36,3 +41,13 @@ Route::get('/profile', function () {
 Route::get('/panier', function () {
     return view('panier');
 })->name('panier');
+
+Route::get('/essai', [UserController::class, 'index']);
+
+Route::get('/categorie', [SeeCategorieController::class, 'voir']);
+
+Route::get('/test', function() {
+    return view('SeeCategorie');
+});
+
+
