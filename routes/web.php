@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\SeeCategorieController;
 use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +22,26 @@ Route::get('/', function () {
 });
 
 
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
+
+Route::get('/homepage', function () {
+    return view('homepage');
+});
+
+Route::get('/categories', function () {
+    return view('categories');
+})->name('categories');
+
+Route::get('/profile', function () {
+    return view('profile');
+})->name('profile');
+
+Route::get('/panier', function () {
+    return view('panier');
+})->name('panier');
+
 Route::get('/essai', [UserController::class, 'index']);
 
 Route::get('/categorie', [SeeCategorieController::class, 'voir']);
@@ -27,4 +49,5 @@ Route::get('/categorie', [SeeCategorieController::class, 'voir']);
 Route::get('/test', function() {
     return view('SeeCategorie');
 });
+
 
