@@ -11,7 +11,7 @@ class Produit extends Model
 
     protected $table = "produit";
 
-    protected $primarykey = "id";
+    //protected $primarykey = "id";
 
     /**
      * The attributes that are mass assignable.
@@ -19,8 +19,9 @@ class Produit extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'categorie',
+        'id_categorie',
         'nom',
-        'description',
+        'prix',
+        'description_produit',
     ];
 }
