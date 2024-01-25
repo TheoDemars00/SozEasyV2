@@ -11,25 +11,15 @@ class Commande extends Model
 
     protected $table = "commande";
 
-    protected $primarykey = "id";
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
+        'id_commande',
         'id_client',
         'id_produit',
         'date_passage_commande',
-    ];
-
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'id_user',
     ];
 }
