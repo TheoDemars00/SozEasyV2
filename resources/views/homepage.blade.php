@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+    @csrf
+    
     <section class="text-center p-4">
         <img src="your-main-image.jpg" alt="Main Image" class="max-w-full h-auto">
     </section>

@@ -38,7 +38,18 @@
 				<button class="button register">
 					<span class="button__text">No account ? Register now :</span>
 					<i class="button__icon fas fa-chevron-right"></i>
-				</button>	
+				</button>
+
+				<button class="button register" onclick="window.location.href='<?php echo route('user.index'); ?>'">
+					<span class="button__text">Create User :</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+					<input style="background-color: blue; border-radius: 10px;" type="button" value="Ajouter un utilisateur">
+				</button>
+				
+
+				
+				
+
 			</form>
 <div></div>
 
@@ -51,3 +62,4 @@
 		</div>		
 	</div>
 </div>
+
