@@ -19,9 +19,9 @@ class Commande extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'prix',
-        'nb_article',
-        'id_user',
+        'id_client',
+        'id_produit',
+        'date_passage_commande',
     ];
 
     /**
