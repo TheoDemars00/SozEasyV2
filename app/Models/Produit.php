@@ -19,6 +19,7 @@ class Produit extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'id_produit',
         'id_categorie',
         'nom',
         'prix',

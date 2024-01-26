@@ -58,7 +58,7 @@ Route::get('/categories', [SeeCategorieController::class, 'choixCategorie'])->na
 
 Route::get('/categories/articles', [SeeCategorieController::class, 'visuCategorie'])->name('articles');
 
-Route::post('/ajouter-donnees', [PanierController::class, 'addToCart']);
+Route::any('/ajouter-donnees', [PanierController::class, 'addToCart']);
 
 Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
