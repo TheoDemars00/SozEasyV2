@@ -7,11 +7,12 @@
         <h3>{{ $art->nom }}<h3>
         <img style="width:300px;length:300px;display:flex;" src="https://images2.acteur-fete.com/F1rfNqXl0jsuBIGxz_mel4QoLkAdBKr4c3DVonbOVEc/rs:fill-down:500:500:1/sh:0.5/aHR0cHM6Ly9zMy5m/ci1wYXIuc2N3LmNs/b3VkL2FmLWltYWdl/cy0xLmFjdGV1ci1m/ZXRlLmNvbS9pbWFn/ZXMvc2Fya29ndXkt/c29zaWUtb2ZmaWNp/ZWwtZGUtbXItbmlj/b2xhcy1zYXJrb3p5/LTIwMTg5MC0yeDN1/bHAuanBn" alt={{$art->nom}}>
         <p>{{$art->description_produit}}</p>
-        <form method="POST" action="/ajouter-donnees">
-            <!-- Ajoutez d'autres champs selon votre modèle -->
-    
-            <button type="submit">Ajouter au panier</button>
+        <form method="POST" action="{{ url('/ajouter-donnees') }}">
+            <!-- Your form fields go here -->
+            @csrf
+            <button type="submit">Submit</button>
         </form>
+        
         @endif
     @if ($art->nom == 'Emmanuel Maron')
         <h3>{{ $art->nom }}<h3>
