@@ -2,6 +2,10 @@
     <nav class="mt-8">
         <a href="{{ route('categories') }}" class="text-white hover:bg-gray-700 py-4 px-4 block">Categories</a>
         <a href="{{ route('profile') }}" class="text-white hover:bg-gray-700 py-4 px-4 block">Profile</a>
-        <a href="{{ route('auth.login') }}" class="text-white hover:bg-gray-700 py-4 px-4 block">Disconnect</a>
+        <form class="nav-items py-4 px-4 block text-white hover:bg-gray-700" p action="{{route('auth.logout')}}" method ="post">
+            @method("delete")
+            @csrf
+            <button class="nav-link">Se deconnecter</button>
+        </form>
     </nav>
 </aside>
