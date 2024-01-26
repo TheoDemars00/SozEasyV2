@@ -5,7 +5,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SeeCategorieController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PanierController;
+
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomepageController;
+
 use App\Http\Controllers\PdfController;
+
 
 
 /*
@@ -24,13 +29,16 @@ Route::get('/', function () {
 });
 
 
-Route::get('/login', function () {
-    return view('login');
-})->name('login');
 
-Route::get('/homepage', function () {
-    return view('homepage');
-});
+
+Route::get('/users', [UserController::class, 'index'])->name('user.index');
+
+
+Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
+Route::post('/login', [AuthController::class, 'doLogin']);
+
+
+Route::get('/homepage', [HomepageController::class, 'index'])->name('homepage');
 
 // Route::get('/categories', function () {
 //     return view('categories');
