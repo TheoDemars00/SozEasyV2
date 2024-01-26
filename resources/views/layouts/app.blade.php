@@ -9,7 +9,7 @@
         /* Additional styles that are not handled by Tailwind go here */
     </style>
 </head>
-<body class="font-raleway bg-gradient-to-r from-white to-purple-100 flex flex-col min-h-screen">
+<body class="font-raleway flex flex-col min-h-screen">
 
     @include('layouts.partials.header')
 

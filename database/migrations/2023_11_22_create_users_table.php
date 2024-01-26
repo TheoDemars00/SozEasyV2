@@ -11,15 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('utilisateurs', function (Blueprint $table) {
+        Schema::create('user', function (Blueprint $table) {
             $table->id();
             $table->morphs('tokenable');
             $table->string('nom');
             $table->string('prenom');
             $table->string('email');
             $table->string('password');
-            $table->timestamp('dagte_anniversaire');
+            $table->date('date_anniversaire');
             $table->string('fidelite');
+            $table->timestamp('updated_at');
+            $table->timestamp('created_at');
         });
     }
 

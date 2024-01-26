@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('commande', function (Blueprint $table) {
             $table->id();
-            $table->string('prix');
-            $table->string('nb_article');
-            $table->string('id_user');
+            $table->string('id_client');
+            $table->string('id_produit');
+            $table->string('date_passage_commande');
+            $table->string('updated_at');
+            $table->string('created_at');
         });
     }
 
