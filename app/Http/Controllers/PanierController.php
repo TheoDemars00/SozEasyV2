@@ -7,6 +7,8 @@ use App\Models\Commande;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
 
+use Illuminate\View\View;
+
 //Test Push
 
 class PanierController extends Controller
@@ -23,8 +25,15 @@ class PanierController extends Controller
             'date_passage_commande'=> date('Y-m-d')
         ]);
 
-
-
         return redirect('/categories/articles');
     }
+
+    public function seeCart() : View
+    {
+        $commande = DB::select('SELECT prd.nom, prd.prix FROM sozeasy.commande com LEFT JOIN sozeasy.produit prd ON com.id_produit = prd.id_produit');
+        
+        return view('panier', ['commande' => $commande]);
+    }
+
+
 }

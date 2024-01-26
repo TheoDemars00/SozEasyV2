@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SeeCategorieController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PanierController;
+use App\Http\Controllers\PdfController;
 
 
 /*
@@ -39,9 +40,7 @@ Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
 
-Route::get('/panier', function () {
-    return view('panier');
-})->name('panier');
+Route::get('/panier', [PanierController::class, 'seeCart'])->name('panier');
 
 Route::get('/essai', [UserController::class, 'index']);
 
@@ -52,6 +51,8 @@ Route::get('/categories', [SeeCategorieController::class, 'choixCategorie'])->na
 Route::get('/categories/articles', [SeeCategorieController::class, 'visuCategorie'])->name('articles');
 
 Route::post('/ajouter-donnees', [PanierController::class, 'addToCart']);
+
+Route::get('/generate-pdf', [PdfController::class, 'generatePdf']);
 
 Route::get('/test', function() {
     return view('SeeCategorie');
