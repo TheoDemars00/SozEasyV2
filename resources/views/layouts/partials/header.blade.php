@@ -1,7 +1,7 @@
 
 <header class="bg-black text-purple-500 p-4 text-left z-10 flex justify-between items-center">
     <div class="flex items-center">
-        <h1 class="text-x1 font-bold">Soz'Easy</h1>
+     <a href="{{ route('homepage')}}" class="text-x1 font-bold">Soz'Easy</a>
     </div>
     <div class="flex items-center space-x-4">
         <div class="panier-btn">
@@ -10,14 +10,7 @@
         <div class ="userAuth">
             @auth
                 {{ \Illuminate\Support\Facades\Auth::user()->nom }}
-                <form class="nav-items" action="{{route('auth.logout')}}" method ="post">
-                    @method("delete")
-                    @csrf
-                    <button class="nav-link">Se deconnecter</button>
-                </form>
             @endauth
-               
-            
             @guest
                 <a href ="{{route('auth.login')}}">Se connecter</a>
             @endguest

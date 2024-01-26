@@ -25,17 +25,17 @@ use App\Http\Controllers\PdfController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
-
-
 
 
 Route::get('/users', [UserController::class, 'index'])->name('user.index');
 
 
-Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('/login', [AuthController::class, 'login'])->name('auth.login')->middleware('guest') ;
 Route::post('/login', [AuthController::class, 'doLogin']);
+
+Route::delete('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 
 Route::get('/homepage', [HomepageController::class, 'index'])->name('homepage');
@@ -46,7 +46,7 @@ Route::get('/homepage', [HomepageController::class, 'index'])->name('homepage');
 
 Route::get('/profile', function () {
     return view('profile');
-})->name('profile');
+})->name('profile')->middleware('auth');
 
 Route::get('/panier', [PanierController::class, 'seeCart'])->name('panier');
 
