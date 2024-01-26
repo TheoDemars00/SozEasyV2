@@ -1,7 +1,7 @@
 
-<header class="bg-white text-purple-600 p-4 text-left z-10 flex justify-between items-center">
+<header class="bg-black text-purple-500 p-4 text-left z-10 flex justify-between items-center">
     <div class="flex items-center">
-        <h1 class="text-xl font-bold">Soz'Easy</h1>
+        <h1 class="text-x1 font-bold">Soz'Easy</h1>
     </div>
     <div class="flex items-center space-x-4">
         <div class="panier-btn">
